@@ -1,0 +1,32 @@
+{
+  "name": "e-commerce-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch  index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shitalwarkhade89/e-commerce-server.git"
+  },
+  "keywords": [],
+  "author": "Shital",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shitalwarkhade89/e-commerce-server/issues"
+  },
+  "homepage": "https://github.com/shitalwarkhade89/e-commerce-server#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.6.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "proxy":"http://localhost:5000/"
+
+}
