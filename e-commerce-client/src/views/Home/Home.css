@@ -43,3 +43,13 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
+.product-detail-btn{
+    background: black;
+    color: white;
+    font-size: 15px;
+    padding: 5px 10px 10px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}

@@ -31,13 +31,14 @@ app.get('/health', (req, res) => {
 
 // Post product
 app.post('/product', async (req, res) => {
-    const { name, description, price, productImage, brand } = req.body;
+    const { name, description, price, productImage, brand,content } = req.body;
     let newProduct = new product({
         name: name,
         description: description,
         price: price,
         productImage: productImage,
         brand: brand,
+        content:content,
     })
     const saveProduct = await newProduct.save();
 
@@ -83,12 +84,12 @@ app.delete('/product/:_id', async (req, res) => {
 // update product
 app.put('/product/:_id', async (req, res) => {
     const { _id } = req.params;
-    const { name, description, price, productImage, brand } = req.body;
+    const { name, description, price, productImage, brand,content } = req.body;
 
     await product.updateOne(
         { _id:_id },
         {
-            $set: { name: name, description: description, price: price, productImage: productImage, brand: brand }
+            $set: { name: name, content:content,description: description, price: price, productImage: productImage, brand: brand }
         }
     );
     const findProduct = await product.findOne({ _id:_id });
@@ -104,7 +105,7 @@ app.put('/product/:_id', async (req, res) => {
 
 app.patch("/product/:_id", async (req, res) => {
     const { _id } = req.params;
-    const { name, description, price, productImage, brand } = req.body;
+    const { name, description, price, productImage, brand,content } = req.body;
   
     const data = await product.findById(_id);
   
@@ -124,6 +125,9 @@ app.patch("/product/:_id", async (req, res) => {
     if (brand) {
       data.brand = brand;
     }
+    if (content) {
+        data.content = content;
+      }
   
     const updateSpecificData = await data.save();
   

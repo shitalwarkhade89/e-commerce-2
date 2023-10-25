@@ -7,7 +7,7 @@ const productSchema = new Schema({
     price: Number,
     productImage: String,
     brand: String,
-    
+    content:String,
 });
 // model
 

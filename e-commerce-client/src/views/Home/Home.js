@@ -18,11 +18,12 @@ function Home() {
         <>
             <h1 className="title"> E-Commerce Products</h1>
 
-            <div className="product-card-d-flex">
+            <div className="product-card-d-flex"
+            >
                 {
 
                     product.map((productInfo, index) => {
-                        const { name, description, brand, price, productImage } = productInfo;
+                        const {_id, name, description, brand, price, productImage } = productInfo;
 
                         return (
                             <div className="product-conteiner">
@@ -36,7 +37,7 @@ function Home() {
                                     <h3 className="product-brand">{brand}</h3>
                                     <h3 className="product-price"> RS:{price}/-</h3>
                                 </div>
-
+                                <a href={`/product-detail/${_id}`} target="_blank"><button className="product-detail-btn">View More</button></a>
 
                             </div>
                         )
