@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "dev": "node --watch  index.js"
+    "dev": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
-  },
-  "proxy":"http://localhost:5000/"
+  }
+  
 
 }

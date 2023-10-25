@@ -29,7 +29,7 @@ app.get('/health', (req, res) => {
 });
 
 
-// Post products
+// Post product
 app.post('/product', async (req, res) => {
     const { name, description, price, productImage, brand } = req.body;
     let newProduct = new product({
@@ -60,11 +60,11 @@ app.get('/products', async (req, res) => {
 
 });
 // get one product by their id
-app.get('/product', async (req, res) => {
+app.get('/product/:_id', async (req, res) => {
 
-    const { name } = req.query;
-    const findProductData = await product.findOne({ name: name }
-    )
+    const {_id } = req.params;
+    const findProductData = await product.findById(_id);
+
     res.json({
         data: findProductData,
         message: 'get product successfully'
@@ -100,7 +100,7 @@ app.put('/product/:_id', async (req, res) => {
 
 });
 
-// Patch 
+// Patch method update spesific data
 
 app.patch("/product/:_id", async (req, res) => {
     const { _id } = req.params;
