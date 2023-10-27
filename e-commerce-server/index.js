@@ -31,7 +31,8 @@ app.get('/health', (req, res) => {
 
 // Post product
 app.post('/product', async (req, res) => {
-    const { name, description, price, productImage, brand,content } = req.body;
+    
+    const { name, description, price, productImage, brand,content} = req.body;
     let newProduct = new product({
         name: name,
         description: description,

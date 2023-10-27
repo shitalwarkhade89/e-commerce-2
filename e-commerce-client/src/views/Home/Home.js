@@ -9,6 +9,17 @@ function Home() {
         setProduct(responce.data.data)
 
     }
+
+    const deleteProduct = async(_id) => {
+        const response = await axios.delete (`/product/${_id}`)
+        if(true){
+       loadProduct();     
+   
+
+        }
+    
+    }
+
     useEffect(() => {
         loadProduct()
     }, [])
@@ -23,7 +34,7 @@ function Home() {
                 {
 
                     product.map((productInfo, index) => {
-                        const {_id, name, description, brand, price, productImage } = productInfo;
+                        const { _id, name, description, brand, price, productImage } = productInfo;
 
                         return (
                             <div className="product-conteiner">
@@ -37,7 +48,18 @@ function Home() {
                                     <h3 className="product-brand">{brand}</h3>
                                     <h3 className="product-price"> RS:{price}/-</h3>
                                 </div>
-                                <a href={`/product-detail/${_id}`} target="_blank"><button className="product-detail-btn">View More</button></a>
+                                <div className="btn-d-flex">
+                                    <a href={`/product-detail/${_id}`} target="_blank"><button className="product-detail-btn">View More</button></a>
+                                    <button className="product-detail-btn btn-color">🛒Buy Now</button>
+                                </div>
+                                <button className="btn-delete-student"
+                                 onClick={() => {
+                                    deleteProduct (_id)
+                                    }}>
+                                    ❌</button>
+                                    <a href={`/update/${_id}`} target="_blank"><button className="btn-update">✏️</button></a>
+                                  
+
 
                             </div>
                         )

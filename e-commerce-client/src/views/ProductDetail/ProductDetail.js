@@ -24,15 +24,17 @@ return(
     <p className="text-center"> Product ID : {_id}</p>
 
     <div className="product-detail-conatiner">
-        <div>
+        <div className="img-cont">
         <img src={product?.productImage} className="product-image"/>
         </div>
-        <div>
+        <div className="details-cont">
            <h1 className="product-name">{product?.name}</h1>
            <p className="description">{product?.description}</p>
+           <p className="description">{product?.content}</p>
+        
            <div className="d-flex">
             <h3>{product?.brand}</h3>
-            <h3>{product?.price}</h3>
+            <h3>RS :- {product?.price}/-</h3>
            </div>
 
         </div>

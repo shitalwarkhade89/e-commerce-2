@@ -16,7 +16,7 @@
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px 0 #ccc;
-
+position: relative;
 
 
 }
@@ -46,10 +46,38 @@
 .product-detail-btn{
     background: black;
     color: white;
+    width: 150px;
     font-size: 15px;
     padding: 5px 10px 10px;
     border: none;
     border-radius: 10px;
-    font-weight: bold;
     cursor: pointer;
+}
+.btn-color{
+    background-color: orange;
+  
+}
+.btn-d-flex{
+    display: flex;
+    justify-content: space-around;
+}
+.btn-delete-student{
+position: absolute;
+top: 10px;
+right: 10px;
+height: 30px;
+width: 30px;
+padding: 5px;
+border-radius: 50%;
+cursor: pointer;
+}
+.btn-update{
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer; 
 }
